@@ -21,7 +21,8 @@ O arquivo `main.py` executa todos os scripts em sequência gerando as imagens na
 * `brightness/brightness.py`: Ajusta o brilho de uma imagem, aumentando ou diminuindo a intensidade de cada pixel.
 * `contrast/contrast.py`: Realça o contraste de uma imagem, esticando a faixa de valores dos pixels.
 * `convert_grey/convert_grey.py`: Converte uma imagem colorida para escala de cinza, calculando a média dos valores RGB de cada pixel.
-* `flip/flip.py`: Inverte uma imagem horizontalmente ou verticalmente.
+* `flip/flip_horizontal.py`: Inverte uma imagem horizontalmente.
+* `flip/flip_vertical.py`: Inverte uma imagem verticalmente.
 * `gaussian_filter/gaussian_filter.py`: Aplica um desfoque gaussiano a uma imagem, reduzindo ruídos e suavizando a imagem.
 * `grey_to_wb/grey_to_wb.py`: Converte uma imagem em escala de cinza para preto e branco, aplicando um limite a cada pixel.
 * `images/images.py`: Contém funções utilitárias para carregar e salvar imagens.
