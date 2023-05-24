@@ -1,6 +1,7 @@
-# Filtro de Mediana em Imagem
 
-Este código em Python demonstra como aplicar um filtro de mediana em uma imagem utilizando a biblioteca PIL (Python Imaging Library) e a biblioteca estatística padrão.
+# Aplicação do Filtro da Mediana em uma Imagem
+
+Este é um exemplo de código Python que demonstra a aplicação do filtro da mediana em uma imagem usando a biblioteca PIL (Python Imaging Library).
 
 ## Pré-requisitos
 
@@ -12,33 +13,21 @@ Certifique-se de ter os seguintes requisitos atendidos antes de executar o códi
 ## Como executar o código
 
 1. Faça o download do código-fonte para o seu computador.
-2. Certifique-se de ter uma imagem no formato suportado (por exemplo, JPEG) no diretório "images" com o nome "elephant.jpg".
-3. No código-fonte, localize a linha onde é chamada a função `apply_median_filter()` e verifique se o caminho do arquivo de imagem está correto.
-4. Ajuste o parâmetro `window_size` de acordo com o tamanho da janela do filtro de mediana desejado.
+2. Certifique-se de ter uma imagem para aplicar o filtro e salve-a no mesmo diretório do código.
+3. No código-fonte, localize a linha onde é feita a abertura da imagem e ajuste o caminho do arquivo para corresponder ao nome e localização da sua imagem.
+4. Ajuste o tamanho da janela do filtro modificando o valor da variável `tamanho_janela`. O valor deve ser um número ímpar maior que 1.
 5. Abra um terminal ou prompt de comando e navegue até o diretório onde você salvou o código.
 6. Execute o código com o comando `python nome_do_arquivo.py`, substituindo "nome_do_arquivo.py" pelo nome do arquivo do código.
-7. Aguarde até que o processamento seja concluído. O resultado será uma nova imagem salva como "elephant_median.jpg" no diretório "images".
+7. Aguarde até que o processamento seja concluído. O resultado será salvo como uma nova imagem com o nome "elephant_median.jpg" no mesmo diretório.
 
 ## Explicação do código
 
-O código começa importando a classe `Image` da biblioteca PIL e o módulo `statistics` para calcular a mediana dos valores dos pixels.
+Este código tem como objetivo aplicar o filtro da mediana em uma imagem usando a biblioteca PIL.
 
-Em seguida, é definida a função `apply_median_filter()` que recebe a imagem original, uma imagem para armazenar o resultado filtrado e o tamanho da janela do filtro de mediana como parâmetros.
+A função `aplicar_filtro_mediana()` é definida para percorrer cada pixel da imagem e aplicar o filtro da mediana. Ela recebe a imagem original, uma imagem vazia para armazenar o resultado e o tamanho da janela do filtro como parâmetros. A função itera sobre cada pixel da imagem, exceto nas bordas, e constrói uma janela de tamanho especificado. Em seguida, os valores dos pixels contidos na janela são coletados em uma lista, ordenados e o valor mediano é selecionado. Esse valor mediano é então atribuído ao pixel correspondente na imagem filtrada.
 
-Dentro da função, o tamanho da imagem é obtido usando o método `size`, e em seguida, dois loops `for` são utilizados para percorrer cada pixel da imagem.
+No corpo principal do código, a imagem original é aberta usando a função `Image.open()` e armazenada na variável `imagem`. Em seguida, uma nova imagem vazia é criada usando a função `Image.new()`, com o mesmo modo e tamanho da imagem original, e é armazenada na variável `imagem_filtrada`. O tamanho da janela do filtro é definido na variável `tamanho_janela`. A função `aplicar_filtro_mediana()` é chamada, passando a imagem original, a imagem filtrada e o tamanho da janela como argumentos. O resultado filtrado é salvo usando o método `save()` com o nome "elephant_median.jpg".
 
-Para cada pixel no centro da imagem (desconsiderando a borda), uma janela de tamanho especificado é criada, e os valores dos pixels dessa janela são coletados em uma lista chamada `window_pixels`. Esses valores são então ordenados usando o método `sort()`.
+Certifique-se de ter permissão de escrita no diretório onde a nova imagem será salva.
 
-A mediana dos valores é calculada usando a função `statistics.median()` aplicada à lista `window_pixels`. O pixel mediano é obtido e atribuído ao pixel correspondente na imagem filtrada usando o método `putpixel()`.
-
-No corpo principal do código, a imagem original é aberta usando a função `Image.open()` e armazenada na variável `image`. Uma nova imagem, do mesmo tamanho e modo que a imagem original, é criada usando o método `Image.new()` e armazenada na variável `filtered_image`.
-
-O tamanho da janela do filtro de mediana é definido na variável `window_size`.
-
-A função `apply_median_filter()` é chamada, passando a imagem original, a imagem filtrada e o tamanho da janela como argumentos.
-
-Por fim, a imagem filtrada é salva usando o método `save()` com o nome "elephant_median.jpg" no diretório "images".
-
-Certifique-se de ter permissão de escrita no diretório onde deseja salvar a imagem filtrada.
-
-Espero que isso ajude a entender o que está acontecendo neste código. Sinta-se à vontade para ajustar e personalizar conforme necessário.
+**Nota:** Você pode ajustar o código conforme necessário para trabalhar com diferentes imagens e parâmetros, além de personalizar as operações de salvamento e processamento adicionais, se desejar.
