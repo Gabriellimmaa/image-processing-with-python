@@ -6,7 +6,7 @@ Este repositório contém exemplos de código em Python para processamento de im
 
 O objetivo deste repositório é fornecer exemplos práticos de como realizar diferentes operações de processamento de imagens usando Python e a biblioteca PIL. Cada exemplo é apresentado em um arquivo separado e é acompanhado por uma breve explicação do que o código faz e como executá-lo.
 
-* [ ] Pré-requisitos
+## Pré-requisitos
 
 Antes de executar os exemplos de código neste repositório, certifique-se de ter os seguintes requisitos atendidos:
 
@@ -14,6 +14,8 @@ Antes de executar os exemplos de código neste repositório, certifique-se de te
 * [ ] Biblioteca PIL instalada (`pip install pillow`) versão `pillow 8.3.1`
 
 ## Explicação Geral
+
+O arquivo `main.py` executa todos os scripts em sequência gerando as imagens na pasta `images`
 
 * `average_filter/average_filter.py`: Aplica o filtro de média para suavizar uma imagem, calculando o valor médio dos pixels na vizinhança.
 * `brightness/brightness.py`: Ajusta o brilho de uma imagem, aumentando ou diminuindo a intensidade de cada pixel.
@@ -26,5 +28,3 @@ Antes de executar os exemplos de código neste repositório, certifique-se de te
 * `median_filter/median_filter.py`: Aplica o filtro de mediana para reduzir ruídos em uma imagem, substituindo cada pixel pelo valor mediano de sua vizinhança.
 * `rgb/rgb.py`: Separa os canais RGB de uma imagem e salva cada canal como uma imagem separada.
 * `rotate/rotate.py`: Rotaciona uma imagem em um ângulo especificado.
-
-Para obter uma explicação mais detalhada sobre cada operação de processamento de imagens e como usar os scripts, consulte as páginas de documentação correspondentes de cada arquivo. Lá você encontrará informações adicionais, exemplos de uso e possíveis parâmetros de configuração.
